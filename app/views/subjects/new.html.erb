@@ -1,0 +1,26 @@
+<h1>授業作成</h1>
+
+<%= form_for @subject do |f| %>
+    <div class="field">
+        <%= f.label :授業名 %>
+        <%= f.text_field :subject_name, :size => 10 %>
+    </div>
+
+    <div class="field">
+        <%= f.label :開講期 %>
+        <%= f.select :opening_year, [["2021前期", "2021前期"], ["2021後期", "2021後期"], ["2022前期", "2022前期"], ["2022後期", "2022後期"], ["2023前期", "2023前期"], ["2023後期", "2023後期"]], include_blank: "選択して下さい" %>
+    </div>
+
+    <div class="field">
+        <%= f.label :開講曜日 %>
+        <%= f.select :date, [["月曜日", "月曜日"], ["火曜日", "火曜日"], ["水曜日", "水曜日"], ["木曜日", "木曜日"], ["金曜日", "金曜日"]], include_blank: "選択して下さい" %>
+    </div>
+
+    <div class="field">
+        <%= f.label :時限 %>
+        <%= f.select :start_time, [["1時限目", "1時限目"], ["2時限目", "2時限目"], ["３時限目", "３時限目"], ["4時限目", "4時限目"], ["5時限目", "5時限目"]], include_blank: "選択して下さい" %>
+    </div>
+    <%= f.submit "講義を作成する" %>
+<% end %>
+
+<%= link_to "作成した授業一覧に戻る", subjects_path %>

@@ -1,0 +1,23 @@
+<h1>生徒情報登録</h1>
+<h3>新規</h3>
+<%= form_for @student do |f| %>
+
+    <div class="field">
+        <%= f.label :名前 %>
+        <%= f.text_field :name, :size => 10 %>
+    </div>
+
+    <div class="field">
+        <%= f.label :所属 %>
+        <%= f.select :expert, [["経営学部", "経営学部"], ["国際学部", "国際学部"], ["健康科学部", "健康科学部"], ["看護学部", "看護学部"], ["福祉学部", "福祉学部"], ["デブ", "デブ"]], include_blank: "選択して下さい" %>
+    </div>
+
+    <div class="field">
+        <%= f.label :学年 %>
+        <%= f.select :grade, [["１年", "１年"], ["２年", "２年"], ["３年", "３年"], ["４年", "４年"]], include_blank: "選択して下さい" %>
+    </div>
+
+    <%= f.submit "生徒情報を更新する" %>
+<% end %>
+
+<%= link_to "作成した授業一覧に戻る", students_path %>

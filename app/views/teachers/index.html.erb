@@ -1,0 +1,12 @@
+<h1>教員情報登録</h1>
+
+<%= link_to "教員情報の修正", new_teacher_path %>
+
+<div class="teachers-container">
+    <% @teachers.each do |t| %>
+        <div class="teacher">
+            <%= t.name %>
+            <%= t.belonging %>
+        </div>
+    <% end %>
+</div>

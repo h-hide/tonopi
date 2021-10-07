@@ -1,0 +1,19 @@
+<h1>教員情報登録</h1>
+<h3>新規</h3>
+<%= form_for @teacher do |f| %>
+
+    <div class="field">
+        <%= f.label :担当教員名 %>
+        <%= f.text_field :name, :size => 10 %>
+    </div>
+
+    <div class="field">
+        <%= f.label :所属 %>
+        <%= f.select :belonging, [["経営学部", "経営学部"], ["国際学部", "国際学部"], ["健康科学部", "健康科学部"], ["看護学部", "看護学部"], ["福祉学部", "福祉学部"], ["デブ", "デブ"]], include_blank: "選択して下さい" %>
+    </div>
+
+
+    <%= f.submit "教員情報を更新する" %>
+<% end %>
+
+<%= link_to "作成した授業一覧に戻る", teachers_path %>

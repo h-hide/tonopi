@@ -1,0 +1,13 @@
+<h1>生徒情報登録</h1>
+
+<%= link_to "生徒情報の修正", new_student_path %>
+
+<div class="students-container">
+    <% @students.each do |t| %>
+        <div class="student">
+            <%= t.name %>
+            <%= t.expert %>
+            <%= t.grade %>
+        </div>
+    <% end %>
+</div>

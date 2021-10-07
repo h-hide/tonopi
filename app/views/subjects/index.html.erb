@@ -1,0 +1,16 @@
+<h1>授業一覧</h1>
+
+<%= link_to "新規投稿へ", new_subject_path %>
+
+<div class="subjects-container">
+    <% @subjects.each do |t| %>
+        <div class="subject">
+            <%= t.subject_name %>
+            <%= t.opening_year %>
+            <%= t.date %>
+            <%= t.start_time %>
+            <%= t.target %>
+            <%= t.created_at %>
+        </div>
+    <% end %>
+</div>
